@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factura</title>
+</head>
+<style>
+/* ===========================
+   ESTILOS BASE
+   =========================== */
+body{
+  display: flex;
+  justify-content: center;
+  font-family: sans-serif;
+  margin: 40px auto;
+  font-size: 20px;
+}
+
+.barra {
+  position: relative;
+}
+
+.barra span::after {
+  background-color: #e6e5e5;
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 60%;
+  right: 1%;
+  z-index: -1;
+}
+
+.barra1 {
+  position: relative;
+  width: 80%;
+}
+
+.barra1 span::after {
+  background-color: #e6e5e5;
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 70%;
+  right: -4%;
+  z-index: -1;
+}
+
+.barra2 {
+  position: relative;
+}
+
+.barra2 span::after {
+  background-color: #e6e5e5;
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 65%;
+  right: 1%;
+  z-index: -1;
+}
+
+.f{
+  margin-left: 75px;
+  margin-top: 10px;
+}
+
+.fo1 {
+  display: flex;
+  flex-direction: column;
+  width: 115px;
+  font-size: 20px;
+  text-align: start;
+  justify-content: end;
+  margin-top: 10px;
+}
+
+.fo1 h4{
+  display: flex;
+  margin: 15px 0;
+}
+
+.five1 {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+.five2 div {
+  text-align: start;
+  padding-left: 55px;
+  font-size: 25px;
+}
+
+.five2,
+.four2,
+.six2,
+.two2 {
+  background-color: #39383d;
+  color: white;
+}
+
+.four1 {
+  display: flex;
+  flex-direction: column;
+  margin-right: 6%;
+  align-items: end;  
+}
+
+.four2 {
+  font-size: 21px;
+  text-align: start;
+  padding-left: 55px ;
+}
+
+.fo2{
+  color:#969696
+}
+
+h1.titulo {
+  margin-bottom: 0;
+}
+
+h3.f1 {
+  text-align: end;
+  padding-right: 70px;
+  font-size: 29px;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 20px 0px;
+  width: 70px;
+}
+
+.line1 {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 5%;
+}
+
+.line2 {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+}
+
+.logo1 {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-left: 10%;  
+  letter-spacing: 1px;
+}
+
+.o2 {
+  display: flex;
+  letter-spacing: 5px;
+  font-family: sans-serif;
+  margin: auto;
+  position: relative;
+  left: 2%;
+}
+
+.one,
+.two,
+.four,
+.five,
+.six {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+.one1 {
+  background-color: #e6e5e5;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  padding: 30px;
+}
+
+.one2,
+.three2 {
+  display: flex;
+  background-color: #1c1c20;
+  color: white;
+  justify-items: center;
+}
+
+.three1{
+  padding: 0 10px 0 40px !important;
+}
+
+.tabla1 th{
+  text-align: left;
+}
+
+.s2 {
+  position: relative;
+  text-align: center;
+  top: 70%;
+}
+
+.six2 {
+  height: auto;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing: 45px 30px;
+  font-size: 25px;
+}
+
+.text1 {
+  position: relative;
+  right: 15%;
+  margin: auto;
+  text-align: start;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 4;
+  text-overflow: ellipsis;
+  margin: auto;
+  width: 270px;
+}
+
+.texto1{
+  display: flex;
+  flex-direction: column;
+  margin: 19% 20%;
+  font-weight: bolder;
+  font-family: arial;
+}
+
+.texto1 h3{
+  font-size: 20px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.texto1 p{
+  margin: 0;
+  margin: 2px;
+}
+
+.text1 p{
+  letter-spacing: 1px;
+  margin-top: 0;
+  font-weight: bold;
+  color: #969696;
+}
+
+.text2{
+  text-align: right; 
+}
+
+.text2 h3{
+  text-align: right
+}
+
+.text2 a{
+  padding-top: 10%;
+}
+
+.titulo {
+  display: flex;
+  margin: auto;
+}
+
+.three td{
+  font-weight: bolder;
+  font-family: arial, sans-serif;
+}
+
+.three,
+.six,
+.six1,
+.two1 {
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+
+.six1{
+  margin-left: 60px;
+}
+
+.two1{
+  padding: 0 30px;
+}
+
+.three1 {
+  background-color: #e6e5e5;
+  border-spacing: 50px;
+  display: grid;
+  padding-left: 15px;
+  text-align: left;
+}
+
+.three2 {
+  color: white;
+}
+
+.two2 {
+  text-align: center;
+}
+
+.texto2{
+  display: flex;
+  flex-direction: column;
+  margin: 9% auto;
+}
+
+.zero {
+  border: 1px solid #e6e5e5;
+  box-shadow: 2px black;
+  width: 60%;
+}
+.f2{
+    margin-top: 0;
+}
+
+/* ===========================
+   MEDIA QUERIES RESPONSIVE
+   =========================== */
+
+/* 300px - Móviles muy pequeños */
+@media (max-width: 300px) {
+  body { font-size: 9px; margin: 5px; }
+  .zero { width: 100%; border: none; }
+  
+  /* Header */
+  .one { grid-template-columns: 1fr; }
+  .one1 { grid-template-columns: 1fr; padding: 15px; text-align: center; }
+  .logo { width: 50px; padding: 10px; }
+  .logo1 { margin: 10px 0; }
+  .logo1 h1 { font-size: 16px; }
+  .logo1 span { font-size: 8px; }
+  .o2 h1 { font-size: 18px; letter-spacing: 3px; }
+  
+  /* Sección Invoice to */
+  .two { grid-template-columns: 1fr; }
+  .two1 { grid-template-columns: 1fr; padding: 15px; }
+  .text1 { width: 100%; right: 0; margin: 10px 0; }
+  .text1 h3 { font-size: 11px; }
+  .text1 p { font-size: 9px; }
+  .text2 { text-align: center; margin: 15px 0; }
+  .texto1 { margin: 15px 0; }
+  .texto1 h3 { font-size: 11px; }
+  .texto1 p, .texto1 a { font-size: 9px; }
+  .two2 { padding: 15px 0; }
+  .texto2 { font-size: 9px; margin: 10px; }
+  
+  /* Tabla de productos */
+  .three { grid-template-columns: 1fr; }
+  .three1, .three2 { padding: 15px 10px !important; }
+  table { border-spacing: 8px 8px; font-size: 9px; width: 100%; }
+  .tabla1 th, .tabla1 td { padding: 5px 2px; }
+  
+  /* Subtotales */
+  .four { grid-template-columns: 1fr; }
+  .four1 { margin: 0; align-items: flex-start; padding: 10px 15px; }
+  .fo1 { width: 100%; font-size: 9px; }
+  .fo1 h4 { margin: 8px 0; }
+  .four2 { padding: 10px 15px; font-size: 9px; }
+  .fo2 h4 { margin: 8px 0; }
+  
+  /* Total */
+  .five { grid-template-columns: 1fr; }
+  .five1 { grid-template-columns: 1fr; }
+  .f { margin: 15px; }
+  .f h3 { font-size: 11px; }
+  .f p { font-size: 9px; }
+  .f1 { padding: 10px 15px; font-size: 16px; text-align: center; }
+  .five2 div { padding: 10px 15px; font-size: 16px; text-align: center; }
+  
+  /* Payment */
+  .six { grid-template-columns: 1fr; }
+  .six1 { margin: 15px; }
+  .payment h3 { font-size: 11px; }
+  .payment p { font-size: 9px; }
+  .line1 { flex-direction: column; margin: 10px 0; gap: 5px; }
+  .line2 { grid-template-columns: 1fr; gap: 10px; }
+  .barra, .barra1, .barra2 { width: 100%; }
+  .six2 { padding: 20px 0; }
+  .s2 { position: static; font-size: 9px; }
+}
+
+/* 350px - 450px */
+@media (min-width: 301px) and (max-width: 450px) {
+  body { font-size: 10px; margin: 8px; }
+  .zero { width: 100%; }
+  
+  .one { grid-template-columns: 1fr; }
+  .one1 { grid-template-columns: 1fr; padding: 20px; text-align: center; }
+  .logo { width: 55px; }
+  .logo1 h1 { font-size: 18px; }
+  .logo1 span { font-size: 9px; }
+  .o2 h1 { font-size: 20px; }
+  
+  .two { grid-template-columns: 1fr; }
+  .two1 { grid-template-columns: 1fr; padding: 20px; }
+  .text1 { width: 100%; right: 0; margin: 15px 0; }
+  .text2 { text-align: center; margin: 15px 0; }
+  .texto1 { margin: 15px 0; }
+  
+  .three { grid-template-columns: 1fr; }
+  .three1, .three2 { padding: 15px !important; }
+  table { border-spacing: 10px 8px; font-size: 10px; }
+  
+  .four { grid-template-columns: 1fr; }
+  .four1 { padding: 15px 20px; align-items: flex-start; margin: 0; }
+  .fo1 { width: 100%; font-size: 10px; }
+  .four2 { padding: 15px 20px; font-size: 10px; }
+  
+  .five { grid-template-columns: 1fr; }
+  .five1 { grid-template-columns: 1fr; }
+  .f { margin: 20px; }
+  .f1 { padding: 15px 20px; font-size: 18px; text-align: center; }
+  .five2 div { padding: 15px 20px; font-size: 18px; text-align: center; }
+  
+  .six { grid-template-columns: 1fr; }
+  .six1 { margin: 20px; }
+  .line1 { flex-direction: column; gap: 8px; }
+  .line2 { grid-template-columns: 1fr; gap: 12px; }
+  .s2 { position: static; }
+}
+
+/* 451px - 600px */
+@media (min-width: 451px) and (max-width: 600px) {
+  body { font-size: 11px; margin: 15px; }
+  .zero { width: 98%; }
+  
+  .one { grid-template-columns: 1fr; }
+  .one1 { grid-template-columns: 35% 65%; padding: 25px; }
+  .logo { width: 60px; }
+  .o2 h1 { font-size: 22px; }
+  
+  .two { grid-template-columns: 1fr; }
+  .two1 { padding: 25px; grid-template-columns: 1fr; }
+  .text1 { width: 90%; margin: 15px auto; right: 0; }
+  .text1 h3 { font-size: 13px; }
+  .text1 p { font-size: 11px; line-height: 1.4; }
+  .text2 { margin: 15px 0; }
+  .texto1 { margin: 15px auto; text-align: center; }
+  
+  .three { grid-template-columns: 1fr; }
+  table { border-spacing: 15px 10px; font-size: 11px; }
+  
+  .four { grid-template-columns: 1fr; }
+  .four1 { padding: 15px 25px; }
+  .four2 { padding: 15px 25px; }
+  
+  .five { grid-template-columns: 1fr; }
+  .f { margin: 25px; }
+  .f1 { padding: 15px 25px; font-size: 20px; }
+  .five2 div { padding: 15px 25px; font-size: 20px; }
+  
+  .six { grid-template-columns: 1fr; }
+  .six1 { margin: 25px; }
+  .line1 { flex-wrap: wrap; justify-content: space-around; }
+  .line2 { grid-template-columns: 2fr 1fr 1fr; }
+}
+
+/* 601px - 768px (Tablets) */
+@media (min-width: 601px) and (max-width: 768px) {
+  body { font-size: 14px; margin: 20px; }
+  .zero { width: 95%; }
+  
+  .one { grid-template-columns: 65% 35%; }
+  .one1 { padding: 28px; }
+  .logo { width: 65px; }
+  
+  .two { grid-template-columns: 65% 35%; }
+  .two1 { padding: 28px; }
+  .text1 { width: 85%; margin: 10px auto; right: 0; }
+  .text1 h3 { font-size: 16px; }
+  .text1 p { font-size: 14px; line-height: 1.5; }
+  .text2 { margin: 10px auto; }
+  .texto1 { margin: 10px; }
+  
+  .three { grid-template-columns: 65% 35%; }
+  table { border-spacing: 25px 18px; font-size: 14px; }
+  
+  .four { grid-template-columns: 65% 35%; }
+  .five { grid-template-columns: 65% 35%; }
+  .six { grid-template-columns: 65% 35%; }
+  
+  .f { margin-left: 40px; }
+  .f h3 { font-size: 16px; }
+  .f p { font-size: 14px; line-height: 1.5; }
+  .f1 { padding-right: 40px; font-size: 26px; }
+  .five2 div { padding-left: 40px; font-size: 26px; }
+  .six1 { margin-left: 40px; }
+}
+
+/* 769px - 1024px (Tablets grandes / Laptops pequeñas) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  body { font-size: 17px; margin: 30px auto; }
+  .zero { width: 85%; }
+  
+  .one, .two, .three, .four, .five, .six { grid-template-columns: 68% 32%; }
+  
+  .logo { width: 68px; }
+  .two1 { padding: 28px; }
+  .text1 { width: 90%; margin: 10px auto; right: 0; }
+  .text1 h3 { font-size: 18px; }
+  .text1 p { font-size: 17px; line-height: 1.5; }
+  
+  table { border-spacing: 35px 25px; font-size: 18px; }
+  .f { margin-left: 50px; }
+  .f h3 { font-size: 18px; }
+  .f p { font-size: 17px; line-height: 1.5; }
+  .f1 { padding-right: 50px; font-size: 27px; }
+  .five2 div { padding-left: 50px; font-size: 27px; }
+  .six1 { margin-left: 50px; }
+}
+
+/* 1025px - 1280px */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  body { font-size: 19px; margin: 38px auto; }
+  .zero { width: 75%; }
+  
+  .one, .two, .three, .four, .five, .six { grid-template-columns: 70% 30%; }
+  
+  .logo { width: 69px; }
+  table { border-spacing: 42px 28px; font-size: 22px; }
+  .f { margin-left: 60px; }
+  .f1 { padding-right: 60px; font-size: 28px; }
+  .five2 div { padding-left: 55px; font-size: 28px; }
+  .six1 { margin-left: 60px; }
+}
+
+/* 1281px - 1440px */
+@media (min-width: 1281px) and (max-width: 1440px) {
+  body { font-size: 20px; margin: 40px auto; }
+  .zero { width: 65%; }
+  
+  .logo { width: 70px; }
+  table { border-spacing: 44px 29px; font-size: 24px; }
+  .f { margin-left: 70px; }
+  .f1 { padding-right: 70px; font-size: 29px; }
+  .five2 div { padding-left: 55px; font-size: 29px; }
+  .six1 { margin-left: 65px; }
+}
+
+/* 1441px y superior - Diseño original optimizado */
+@media (min-width: 1441px) {
+  .zero { width: 60%; }
+}
+
+</style>
+
+<body>
+    <div class="zero">
+
+        <div class="one">
+            <div class="one1">
+                <div><img class="logo" src="./LOGO (2).png" alt="logo"></div>
+                <div class="logo1">
+                   
+                <h1 class="titulo"> COMPANY NAME</h1>
+                <span class="titulo" style="color:#766f6d">BRANDING TAGLINE SPACE HERE</span>
+                </div>
+            </div>
+            <div class="one2">
+                <div class="o2" >
+                    <h1>INVOICE</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="two">
+            <div class="two1">
+                <div class="text1">
+                    <h3> <b>Additional notes</b></h3>
+                    <p>Ut enim ad minim veniam qula nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo
+                        consequat</p>
+                </div>
+
+                <div class="text2">
+                    <div class="texto1">
+                        <h3> Invoice to:</h3>
+                        <a><b> JOHN SMITH</b></a>
+                        <p>123 GREEN LAKE ST.</p> 
+                        <p>CITY STATE </p>
+                        <p>COUNTRY </p>
+                    </div>
+                </div>
+            </div>
+            <div class="two2">
+                <div class="texto2">
+                    <b>INVOICE DATE</b> 
+                    <span style="color:#e6e5e5"> 03.02.20 </span><br><br>
+                    <b>DUE DATE </b> 
+                    <span style="color:#e6e5e5">03.12.201 </span> <br><br>
+                    <b>INVOICE # </b> 
+                    <span style="color:#e6e5e5">14256 </span>
+                </div>
+            </div>
+        </div>
+        <div class="three">
+            <div class="three1">
+                <table class="tabla1">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="margin-right: 10px;">#</th>
+                            <th scope="col">Product Description</th>
+                            <th id="price" scope="col">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Item 1</td>
+                            <td style="width: 100px;">$30.50</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Item 2</td>
+                            <td>$50.00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Item 3</td>
+                            <td>$70.00</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Item 4</td>
+                            <td>$20.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="three2">
+                <table class="t2" style="color: white;">
+                    <thead>
+                        <tr>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>$91.50</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>$50.00</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>$350.00</td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>$40.00</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="four">
+            <div class="four1">
+                <div></div>
+                <div class="fo1">
+                    <h4>Subtotal</h4>
+                    <h4>Taxes</h4>
+                    <h4>Shipping</h4>
+                    <h4>Discount</h4>
+                </div>
+            </div>
+            <div class="four2">
+                <div class="fo2" >
+                    <h4>$531.80</h4>
+                    <h4>$63.78</h4>
+                    <h4>$17.00</h4>
+                    <h4>-$15.00</h4>
+                </div>
+            </div>
+        </div>
+        <div class="five">
+            <div class="five1">
+                <div class="f">
+                    <h3 style="text-align: left;"> Term and conditions</h3>
+                    <p class="p" >
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus ipsam eius tenetur itaque dolor sit consectetur elit.
+                    </p>
+                </div>
+                <h3 class="f1"  >TOTAL</h3>
+            </div>
+            <div class="five2">
+                <div class="f2">
+                    <h3>$597.58</h3>
+                </div>
+            </div>
+        </div>
+        <div class="six">
+            <div class="six1">
+                <div class="payment" style="text-align: left; margin-left: 10px;">
+                    <h3>Payment Method</h3>
+                    <div class="line1">
+                        <p>⚪Cash/Debit </p>
+                        <p>⚪Cheque</p>
+                        <p>⚪Credit card</p>
+                    </div>
+                    <p class="barra">Cardholder's Named <span><span></span></span></p>
+                    <div class="line2">
+                        <p class="barra1">Card # <span><span></span></span></p>
+                        <p class="barra2">Exp <span><span></span></span></p>
+                        <p class="barra2">CV<span><span></span></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="six2">
+                <div class="s2">
+                   <p> 
+                    _______________________<br>
+                    Signature
+                    </p>
+                </div>
+            </div>
+
+        </div>
+</body>
+
+</html>
